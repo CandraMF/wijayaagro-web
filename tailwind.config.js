@@ -13,16 +13,13 @@ module.exports = {
     //     ]
     //   },
     content: ['./src/**/*.js'],
-    darkMode: 'class',
+    darkMode: 'media',
     theme: {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
-        daisyui: {
-            themes: ["light", "dark", "cupcake"],
-          },
     },
     variants: {
         extend: {
