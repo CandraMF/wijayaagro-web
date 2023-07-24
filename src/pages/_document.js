@@ -8,7 +8,8 @@ class MyDocument extends Document {
 
     render() {
         return (
-            <html data-theme="light">
+
+            <Html data-theme="cupcake">
                 <Head>
                     <link
                         href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap"
@@ -19,7 +20,7 @@ class MyDocument extends Document {
                     <Main />
                     <NextScript />
                 </body>
-            </html>
+            </Html>
         )
     }
 }

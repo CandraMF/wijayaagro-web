@@ -29,9 +29,12 @@ module.exports = {
             opacity: ['disabled'],
         },
     },
+    daisyui: {
+        themes: ["light", "dark", "cupcake"],
+    },
     plugins: [
         require('@tailwindcss/forms'),
-        require("daisyui")
+        require("daisyui"),
     ],
 }
 
