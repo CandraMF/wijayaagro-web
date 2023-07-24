@@ -7,287 +7,316 @@ export default function Home() {
 
     return (
         <>
+
             <Head>
                 <title>Laravel</title>
             </Head>
 
-            <div className="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-                <div className="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    {user ? (
-                        <Link
-                            href="/dashboard"
-                            className="ml-4 text-sm text-gray-700 underline">
-                            Dashboard
-                        </Link>
-                    ) : (
-                        <>
-                            <Link
-                                href="/login"
-                                className="text-sm text-gray-700 underline">
-                                Login
-                            </Link>
-
-                            <Link
-                                href="/register"
-                                className="ml-4 text-sm text-gray-700 underline">
-                                Register
-                            </Link>
-                        </>
-                    )}
+            {/* <div className="relative flex w-full flex-wrap items-center justify-between bg-[#FBFBFB] py-2 text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:py-4">
+                <div className="container mx-auto px-12 flex w-full flex-wrap items-center justify-between px-3">
+                    <span className="ml-2 text-neutral-500 dark:text-neutral-200">
+                        text with an inline element</span>
+                    <span className="ml-2 text-neutral-500 dark:text-neutral-200">
+                        text with an inline element</span>
                 </div>
 
-                <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                    <div className="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                        <svg
-                            viewBox="0 0 651 192"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-16 w-auto text-gray-700 sm:h-20">
-                            <g clipPath="url(#clip0)" fill="#EF3B2D">
-                                <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z" />
-                            </g>
-                        </svg>
-                    </div>
+            </div> */}
 
-                    <div className="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                        <div className="grid grid-cols-1 md:grid-cols-2">
-                            <div className="p-6">
-                                <div className="flex items-center">
-                                    <svg
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        viewBox="0 0 24 24"
-                                        className="w-8 h-8 text-gray-500">
-                                        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                    </svg>
+            <div className="dark:bg-amber-600 shadow">
+                <div className="max-w-7x1 py-2 px-12 sm:px-6 lg:px-20 ml-12 ">
+                    <div className="flex items-center space-x-6  ">
+                        <div className="flex items-center ">
+                            <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
 
-                                    <div className="ml-4 text-lg leading-7 font-semibold">
-                                        <a
-                                            href="https://laravel.com/docs"
-                                            className="underline text-gray-900 dark:text-white">
-                                            Documentation
-                                        </a>
+                        </div>
+                        <div className="flex items-center  md:w-auto space">
+                            <img
+                                className="h-5 w-5"
+                                src="/images/envelope.png"
+                                alt=""
+
+                            />
+                            <a
+                                href="#"
+                                className=" text-white px-3 py-2 h-9 rounded-md text-sm font-medium"
+                            >
+                                wijayaagri@gmail.com
+                            </a>
+                        </div>
+                        <div className="flex items-center  md:w-auto">
+                            <img
+                                className="h-4"
+                                src="/images/phone-call.png"
+                                alt=""
+
+                            />
+                            <a
+                                href="#"
+                                className=" text-white px-3 py-2 h-8 rounded-md text-sm font-medium"
+                            >
+                                08121919191
+                            </a>
+                        </div>
+                        <div className="max-w-7x1 sm:px-5 ml-20">
+                            <div className="max-w-7x1 ml-20">
+                                <div className="ml-20 ">
+                                    <div div className=" text-white flex items-center md:w-auto ml-20 ">
+                                        Find Us :
+                                        <div className="backdrop-blur-sm bg-white/30  px-2 py-1 rounded ml-2 space-x-4">
+                                            <img
+                                                className="h-5 w-5 "
+                                                src="/images/envelope.png"
+                                                alt=""
+
+                                            />
+
+                                        </div>
+                                        <div className="backdrop-blur-sm bg-white/30  px-2 py-1 rounded ml-2">
+                                            <img
+                                                className="h-5 w-5 "
+                                                src="/images/envelope.png"
+                                                alt=""
+
+                                            />
+                                        </div>
+                                        <div className="backdrop-blur-sm bg-white/30  px-2 py-1 rounded ml-2">
+                                            <img
+                                                className="h-5 w-5 "
+                                                src="/images/envelope.png"
+                                                alt=""
+
+                                            />
+                                        </div>
+                                        <div className="backdrop-blur-sm bg-white/30 px-2 py-1 rounded ml-2">
+                                            <img
+                                                className="hover:opacity-50 h-5 w-5 "
+                                                src="/images/envelope.png"
+                                                alt=""
+
+                                            />
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="ml-12">
-                                    <div className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                        Laravel has wonderful, thorough
-                                        documentation covering every aspect of
-                                        the framework. Whether you are new to
-                                        the framework or have previous
-                                        experience with Laravel, we recommend
-                                        reading all of the documentation from
-                                        beginning to end.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                                <div className="flex items-center">
-                                    <svg
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        viewBox="0 0 24 24"
-                                        className="w-8 h-8 text-gray-500">
-                                        <path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                                        <path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-
-                                    <div className="ml-4 text-lg leading-7 font-semibold">
-                                        <a
-                                            href="https://laracasts.com"
-                                            className="underline text-gray-900 dark:text-white">
-                                            Laracasts
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div className="ml-12">
-                                    <div className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                        Laracasts offers thousands of video
-                                        tutorials on Laravel, PHP, and
-                                        JavaScript development. Check them out,
-                                        see for yourself, and massively level up
-                                        your development skills in the process.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="p-6 border-t border-gray-200 dark:border-gray-700">
-                                <div className="flex items-center">
-                                    <svg
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        viewBox="0 0 24 24"
-                                        className="w-8 h-8 text-gray-500">
-                                        <path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                                    </svg>
-
-                                    <div className="ml-4 text-lg leading-7 font-semibold">
-                                        <a
-                                            href="https://laravel-news.com/"
-                                            className="underline text-gray-900 dark:text-white">
-                                            Laravel News
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div className="ml-12">
-                                    <div className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                        Laravel News is a community driven
-                                        portal and newsletter aggregating all of
-                                        the latest and most important news in
-                                        the Laravel ecosystem, including new
-                                        package releases and tutorials.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                                <div className="flex items-center">
-                                    <svg
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        viewBox="0 0 24 24"
-                                        className="w-8 h-8 text-gray-500">
-                                        <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-
-                                    <div className="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">
-                                        Vibrant Ecosystem
-                                    </div>
-                                </div>
-
-                                <div className="ml-12">
-                                    <div className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                        Laravel's robust library of first-party
-                                        tools and libraries, such as{' '}
-                                        <a
-                                            href="https://forge.laravel.com"
-                                            className="underline">
-                                            Forge
-                                        </a>
-                                        ,{' '}
-                                        <a
-                                            href="https://vapor.laravel.com"
-                                            className="underline">
-                                            Vapor
-                                        </a>
-                                        ,{' '}
-                                        <a
-                                            href="https://nova.laravel.com"
-                                            className="underline">
-                                            Nova
-                                        </a>
-                                        , and{' '}
-                                        <a
-                                            href="https://envoyer.io"
-                                            className="underline">
-                                            Envoyer
-                                        </a>{' '}
-                                        help you take your projects to the next
-                                        level. Pair them with powerful open
-                                        source libraries like{' '}
-                                        <a
-                                            href="https://laravel.com/docs/billing"
-                                            className="underline">
-                                            Cashier
-                                        </a>
-                                        ,{' '}
-                                        <a
-                                            href="https://laravel.com/docs/dusk"
-                                            className="underline">
-                                            Dusk
-                                        </a>
-                                        ,{' '}
-                                        <a
-                                            href="https://laravel.com/docs/broadcasting"
-                                            className="underline">
-                                            Echo
-                                        </a>
-                                        ,{' '}
-                                        <a
-                                            href="https://laravel.com/docs/horizon"
-                                            className="underline">
-                                            Horizon
-                                        </a>
-                                        ,{' '}
-                                        <a
-                                            href="https://laravel.com/docs/sanctum"
-                                            className="underline">
-                                            Sanctum
-                                        </a>
-                                        ,{' '}
-                                        <a
-                                            href="https://laravel.com/docs/telescope"
-                                            className="underline">
-                                            Telescope
-                                        </a>
-                                        , and more.
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div className="flex justify-center mt-4 sm:items-center sm:justify-between">
-                        <div className="text-center text-sm text-gray-500 sm:text-left">
-                            <div className="flex items-center">
-                                <svg
-                                    fill="none"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    className="-mt-px w-5 h-5 text-gray-400">
-                                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                                </svg>
 
+            </div>
+
+            {/* hover:text-green-500 */}
+            <nav class="sticky navbar-start bg-amber dark:bg-amber-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+                {/* <nav className="sticky top-0 bg-yellow-900 fixed w-full shadow-md z-50 px-4 flex justify-between items-center scroll-smooth "> */}
+                {/* <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"> */}
+                {/* <div className="max-w-7x1 py-2 px-12 sm:px-6 lg:px-20 ml-12 "> */}
+
+                <div className="flex items-center justify-between h-15 ml-10 ">
+                    {/* <div className="ml-20"> */}
+                    <div className="flex-shrink-1 items-center ml-20">
+                        <img
+                            className="h-12 w-12"
+                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                            alt="Workflow"
+                        />
+                    </div>
+                    <div className="flex-none flex-1 md:order-2 justify-self-rigrht pb-3 mt-8 md:block md:pb-0 md:mt-0">
+                        <div className="menu menu-horizontal hidden md:block ">
+                            <div className="ml-20 px-20 flex items-baseline space-x-1">
                                 <a
-                                    href="https://laravel.bigcartel.com"
-                                    className="ml-1 underline">
-                                    Shop
+                                    href="#"
+                                    className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                                >
+                                    Dashboard
                                 </a>
 
-                                <svg
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    viewBox="0 0 24 24"
-                                    className="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                    <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
+                                <a
+                                    href="#"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                >
+                                    Team
+                                </a>
 
                                 <a
-                                    href="https://github.com/sponsors/taylorotwell"
-                                    className="ml-1 underline">
-                                    Sponsor
+                                    href="#"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                >
+                                    Projects
                                 </a>
+
+                                <a
+                                    href="#"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                >
+                                    Reports
+                                </a>
+
+
+                                <div className="flex-none h-4 space-x-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                                        <path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
+                                    </svg>
+
+
+
+                                    {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg> */}
+                                </div>
+                                <a
+                                    href="#"
+                                    className=" text-white px-3 py-2 h-8 rounded-md text-sm font-medium">
+
+
+                                    Ordew Now
+                                </a>
+
+
+                                {/* <div className="flex-none">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                            </div> */}
+                                <div className="form-control">
+                                    <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+                                </div>
+                                {/* </div> */}
+                                {/* </div> */}
+                                {/* </div> */}
+
+                            </div>
+                            <div className="-mr-2 flex md:hidden">
+                                <button
+                                    type="button"
+                                    className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                    aria-controls="mobile-menu"
+                                    aria-expanded="false"
+                                >
+                                    <span className="sr-only">Open main menu</span>
+
+                                    <svg
+                                        className="block h-6 w-6"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M4 6h16M4 12h16M4 18h16"
+                                        />
+                                    </svg>
+
+                                    <svg
+                                        className="hidden h-6 w-6"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12"
+                                        />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <div className="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                            Laravel Breeze + Next.js template
-                        </div>
+                {/* </div> */}
+            </nav>
+
+
+            <main>
+                <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                    {/* <!-- Replace with your content --> */}
+                    <div className="px-4 py-6 sm:px-0">
+                        <div className="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
+                    </div>
+                    {/* <!-- /End replace --> */}
+                </div>
+            </main>
+
+
+
+
+            <div className="carousel w-full">
+                <div id="slide1" className="carousel-item relative w-full">
+                    <img src="/images/photo.jpg" className="h-auto w-full" />
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide4" className="btn btn-circle">❮</a>
+                        <a href="#slide2" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                {/* <div id="slide2" className="carousel-item relative w-full">
+                    <img src="/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide1" className="btn btn-circle">❮</a>
+                        <a href="#slide3" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide3" className="carousel-item relative w-full">
+                    <img src="/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide2" className="btn btn-circle">❮</a>
+                        <a href="#slide4" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide4" className="carousel-item relative w-full">
+                    <img src="/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide3" className="btn btn-circle">❮</a>
+                        <a href="#slide1" className="btn btn-circle">❯</a>
+                    </div>
+                </div> */}
+            </div>
+
+            <div className="hero min-h-screen bg-base-200">
+                <div className="hero-content flex-col lg:flex-row">
+                    <img src="/images/photo.jpg" className="max-w-sm rounded-lg shadow-2xl" />
+                    <div >
+                        <h1 className="text-5xl font-bold">Box Office News!</h1>
+                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <button className="btn btn-primary">Get Started</button>
                     </div>
                 </div>
             </div>
+
+
+            {/* footer */}
+            <footer className="footer p-10 bg-neutral-800 dark:bg-neutral-900 text-base-content">
+
+                <div className="text-neutral-50">
+                    <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clip-rule="evenodd" className="fill-current"><path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path></svg>
+                    <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
+                </div>
+                <div className="text-neutral-50">
+                    <span className=" text-neutral-50 footer-title">Services</span>
+                    <div className=" mb-8">
+                        <p>Provident cupiditate voluptatem et in.</p>
+                    </div>
+                </div>
+                <div className="text-neutral-50">
+                    <span className="footer-title">Company</span>
+                    <a className="link link-hover">About us</a>
+                    <a className="link link-hover">Contact</a>
+                    <a className="link link-hover">Jobs</a>
+                    <a className="link link-hover">Press kit</a>
+                </div>
+                <div className="text-neutral-50">
+                    <span className="footer-title">Legal</span>
+                    <a className="link link-hover">Terms of use</a>
+                    <a className="link link-hover">Privacy policy</a>
+                    <a className="link link-hover">Cookie policy</a>
+                </div>
+
+            </footer>
         </>
+
     )
 }
