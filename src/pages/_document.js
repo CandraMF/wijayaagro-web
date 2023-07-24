@@ -8,6 +8,7 @@ class MyDocument extends Document {
 
     render() {
         return (
+
             <Html data-theme="cupcake">
                 <Head>
                     <link

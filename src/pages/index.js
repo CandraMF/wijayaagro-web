@@ -12,16 +12,6 @@ export default function Home() {
                 <title>Laravel</title>
             </Head>
 
-            {/* <div className="relative flex w-full flex-wrap items-center justify-between bg-[#FBFBFB] py-2 text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:py-4">
-                <div className="container mx-auto px-12 flex w-full flex-wrap items-center justify-between px-3">
-                    <span className="ml-2 text-neutral-500 dark:text-neutral-200">
-                        text with an inline element</span>
-                    <span className="ml-2 text-neutral-500 dark:text-neutral-200">
-                        text with an inline element</span>
-                </div>
-
-            </div> */}
-
             <div className="dark:bg-amber-600 shadow">
                 <div className="max-w-7x1 py-2 px-12 sm:px-6 lg:px-20 ml-12 ">
                     <div className="flex items-center space-x-6  ">
