@@ -13,7 +13,7 @@ module.exports = {
     //     ]
     //   },
     content: ['./src/**/*.js'],
-    darkMode: 'class',
+    darkMode: 'media',
     theme: {
         extend: {
             fontFamily: {
