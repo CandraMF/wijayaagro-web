@@ -40,7 +40,7 @@ export default function Product() {
                             <img className="w-7" src="/Assets/website.png" />
                             <span>Website : wijaya-agro.co.id</span>
                         </div>
-
+                        {/* Maps */}
                         <p className="mb-3 text-2xl font-bold pt-5 md:text-left text-center">Our Office :</p>
                         <div class="block w-full shrink-0 grow-0 basis-auto">
                             <div class="h-[300px]  w-full">
@@ -53,7 +53,7 @@ export default function Product() {
                     </div>
                 </div>
 
-                {/* maps */}
+                
 
 
                 {/* form */}
@@ -94,10 +94,10 @@ export default function Product() {
                                 className="peer block min-h-[auto] w-full rounded border-black bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                                 id="exampleFormControlTextarea1" rows="3" placeholder="Your message"></textarea>
                         </div>
-                        <div className='bg-red-100 md:text-start text-center'>
+                        <div className='md:text-start text-center'>
 
                             <button type="button" data-te-ripple-init="light"
-                                className=" inline-block w-35 rounded bg-amber-900 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white  transition duration-150 ease-in-out hover:bg-white hover:text-amber-900 focus:bg-amber-900  focus:outline-none focus:ring-0 active:bg-amber-900  dark:focus:bg-amber-900">
+                                className=" inline-block w-35 rounded mt-3 bg-amber-900 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white  transition duration-150 ease-in-out hover:bg-white hover:text-amber-900 focus:bg-amber-900  focus:outline-none focus:ring-0 active:bg-amber-900  dark:focus:bg-amber-900">
                                 SEND MESSAGE 
                             </button>
                         </div>
