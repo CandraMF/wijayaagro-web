@@ -12,7 +12,7 @@ export default function Product() {
             <Head>
                 <title>Our Product</title>
             </Head>
-            <div className="container mx-auto grid px-36 grid-cols-3 gap-5 pt-8 max-h-fit">
+            <div className="container mx-auto grid px-5 md:px-36 grid-cols-2 md:grid-cols-3 gap-5 pt-8 max-h-fit">
                 
                 <div className="card rounded-none bg-white shadow-xl">
                     <figure className='h-64'>

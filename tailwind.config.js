@@ -20,9 +20,6 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
-        daisyui: {
-            themes: ["light", "dark", "cupcake"],
-          },
     },
     variants: {
         extend: {
